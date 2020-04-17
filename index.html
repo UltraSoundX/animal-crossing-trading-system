@@ -1,0 +1,324 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <meta charset="utf-8" />
+  <title>大白菜交易市场</title>
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no" />
+  <link rel="apple-touch-icon" href="pages/ico/60.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="pages/ico/76.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="pages/ico/120.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="pages/ico/152.png">
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-touch-fullscreen" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <link href="assets/plugins/pace/pace-theme-flash.css" rel="stylesheet" type="text/css" />
+  <link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <link href="assets/plugins/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css" />
+  <link href="assets/plugins/jquery-scrollbar/jquery.scrollbar.css" rel="stylesheet" type="text/css" media="screen" />
+  <link href="assets/plugins/select2/css/select2.min.css" rel="stylesheet" type="text/css" media="screen" />
+  <link href="assets/plugins/switchery/css/switchery.min.css" rel="stylesheet" type="text/css" media="screen" />
+  <link href="assets/plugins/nvd3/nv.d3.min.css" rel="stylesheet" type="text/css" media="screen" />
+  <link href="assets/plugins/rickshaw/rickshaw.min.css" rel="stylesheet" type="text/css" />
+  <link href="assets/css/dashboard.widgets.css" rel="stylesheet" type="text/css" media="screen" />
+  <link href="pages/css/pages-icons.css" rel="stylesheet" type="text/css">
+  <link class="main-stylesheet" href="pages/css/themes/modern.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body class="fixed-header horizontal-menu horizontal-app-menu dashboard">
+  <!-- START PAGE-CONTAINER -->
+  <div class="header p-r-0 bg-primary">
+    <div class="header-inner header-md-height">
+      <a href="#" class="btn-link toggle-sidebar d-lg-none pg pg-menu text-white" data-toggle="horizontal-menu"></a>
+      <div class="">
+        <div class="brand inline no-border d-sm-inline-block">
+            <h4 class = "breadcrumb-item active">大白菜交易中心</h4>
+        </div>
+      </div>
+    </div>
+    <div class="bg-white">
+      <div class="container">
+        <div class="menu-bar header-sm-height" data-pages-init='horizontal-menu' data-hide-extra-li="4">
+          <a href="#" class="btn-link toggle-sidebar d-lg-none pg pg-close" data-toggle="horizontal-menu">
+          </a>
+          <ul>
+            <li class=" active">
+              <a href="index.html">交易大厅</a>
+            </li>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="page-container ">
+    <!-- START PAGE CONTENT WRAPPER -->
+    <div class="page-content-wrapper ">
+      <!-- START PAGE CONTENT -->
+      <div class="content sm-gutter">
+        <!-- START BREADCRUMBS -->
+        <div class="bg-white">
+          <div class="container">
+            <ol class="breadcrumb breadcrumb-alt">
+              <li class="breadcrumb-item"><a href="#">DBC-MARKET</a></li>
+              <li class="breadcrumb-item active">交易大厅</li>
+            </ol>
+          </div>
+        </div>
+        <!-- END BREADCRUMBS -->
+        <!-- START CONTAINER FLUID -->
+        <div class="container sm-padding-10 p-t-20 p-l-0 p-r-0">
+          <!-- START ROW -->
+          <div class="row" id = "dbc">
+            <div class="col-lg-3 col-sm-6 d-flex flex-column">
+              <div class="card social-card share  full-width m-b-10 no-border" data-social="item">
+                <div class="card-header">
+                  <h5 class="text-danger pull-left fs-11">发布交易</h5>
+                </div>
+                <div class="card-description">
+                  <h5>
+                    请输入交易信息吧~
+                  </h5>
+                  <div class="form-group">
+                    <input class="typeahead form-control sample-typehead" id="user" placeholder="用户昵称">
+                  </div>
+                  <div class="form-group">
+                    <input class="typeahead form-control sample-typehead" id="time" placeholder="有效时间">
+                  </div>
+                  <div class="form-group">
+                    <input class="typeahead form-control sample-typehead" type="number" id="price" placeholder="收购价格">
+                  </div>
+                  <div class="form-group">
+                    <select class="full-width" id="status" data-init-plugin="select2">
+                      <optgroup label="请选择岛屿类型">
+                        <option value="仅限好友">仅限好友，请在下框中输入好友代码</option>
+                        <option value="密码登岛">密码登岛，请在下框中输入密码</option>
+                      </optgroup>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <input class="typeahead form-control sample-typehead" id="auth"
+                      placeholder="请输入对应类型的凭证吧~">
+                  </div>
+                  <div class="form-group">
+                    <input class="typeahead form-control sample-typehead" id="broker"
+                      placeholder="手续费">
+                  </div>
+                  <div style="text-align:center">
+                    <button class="btn btn-primary btn-sm btn-cons" onclick="upload()">我要发布！</button>
+                  </div>
+                  <div class="clearfix"></div>
+                </div>
+                <div class="card-footer clearfix"></div>
+              </div>
+            </div>
+            
+            
+            </div>
+            <!-- END ROW -->
+            <!-- END CONTAINER FLUID -->
+          </div>
+          </div>
+          <!-- END PAGE CONTENT -->
+          <!-- START COPYRIGHT -->
+          <!-- START CONTAINER FLUID -->
+          <div class=" container   container-fixed-lg footer">
+            <div class="copyright sm-text-center">
+              <p class="small no-margin pull-left sm-pull-reset">
+                <span class="hint-text">Copyright &copy; 2020</span>
+                <span class="font-montserrat">Radiology.link</span>.
+                <span class="hint-text">All rights reserved. </span>
+              </p>
+              <div class="clearfix"></div>
+            </div>
+          </div>
+          <!-- END COPYRIGHT -->
+        </div>
+        <!-- END PAGE CONTENT WRAPPER -->
+      </div>
+      <!-- END PAGE CONTAINER -->
+      <!-- BEGIN VENDOR JS -->
+      <script src="assets/plugins/jquery/jquery-3.2.1.min.js" type="text/javascript"></script>
+      <script src="assets/plugins/modernizr.custom.js" type="text/javascript"></script>
+      <script src="assets/plugins/jquery-ui/jquery-ui.min.js" type="text/javascript"></script>
+      <script src="assets/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+      <script src="assets/plugins/jquery/jquery-easy.js" type="text/javascript"></script>
+      <script src="assets/plugins/jquery-unveil/jquery.unveil.min.js" type="text/javascript"></script>
+      <script src="assets/plugins/jquery-ios-list/jquery.ioslist.min.js" type="text/javascript"></script>
+      <script src="assets/plugins/jquery-actual/jquery.actual.min.js"></script>
+      <script src="assets/plugins/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+      <script type="text/javascript" src="assets/plugins/select2/js/select2.full.min.js"></script>
+      <script src="assets/plugins/nvd3/lib/d3.v3.js" type="text/javascript"></script>
+      <script src="assets/plugins/nvd3/nv.d3.min.js" type="text/javascript"></script>
+      <script src="assets/plugins/jquery-metrojs/MetroJs.min.js" type="text/javascript"></script>
+      <script src="assets/plugins/jquery-sparkline/jquery.sparkline.min.js" type="text/javascript"></script>
+      <script type="text/javascript" src="assets/plugins/mustache.js "></script>
+      <script type="text/javascript" src="assets/plugins/layer/layer.js"></script>
+      <script type="text/javascript" src="assets/plugins/laydate/laydate.js"></script>
+      <!-- END VENDOR JS -->
+      <!-- BEGIN CORE TEMPLATE JS -->
+      <script src="pages/js/pages.min.js"></script>
+      <!-- END CORE TEMPLATE JS -->
+      <!-- BEGIN PAGE LEVEL JS -->
+      <script src="assets/js/dashboard.js" type="text/javascript"></script>
+      <script src="assets/js/scripts.js" type="text/javascript"></script>
+      <!-- END PAGE LEVEL JS -->
+</body>
+
+<script type="text/template" id="market">
+  <div class="col-lg-3 col-sm-6 d-flex flex-column">
+    <div class="card social-card share  full-width m-b-10 no-border" data-social="item">
+      <div class="card-header clearfix">
+        <h5 class="text-success pull-left fs-12">DBC MARKET <i class="fa fa-circle text-success fs-11"></i>
+        </h5>
+        <div class="clearfix"></div>
+      </div>
+      <div class="card-description">
+        <h4 class='hint-text no-margin'>昵称：{{user}}</h4>
+        <h4 class="hint-text no-margin">有效时间：{{time}}</h4>
+        <h4 class="hint-text no-margin"><span class="text-success">收购价格：{{price}} 铃钱</span></h4>
+        <h4 class="hint-text no-margin">岛屿类型:{{status}}</h4>
+        <h4 class="hint-text no-margin">登岛信息:<br>{{auth}}</h4>
+        <h4 class="hint-text no-margin"><i class="fa fa-handshake-o small text-success"></i><span
+            class="text-success">手续费： {{broker}}</span></h4>
+            <br>
+        <div style="text-align:center">
+              <button class="btn btn-danger btn-sm btn-cons" onclick="landing(this)">我要上岛！</button>
+        </div>
+      </div>
+      <div class="card-footer clearfix">
+        <div class="pull-left">集合啦， <span class="text-success">动物森友会！</span>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+  </div>
+</script>
+
+<script type="application/javascript">
+  var time = null;
+
+  $(document).ready(function(){
+    getbroker();
+    var obj = new Date();
+    var hour = obj.getHours();
+    var minute = obj.getMinutes();
+    var second = obj.getSeconds();
+    var strict = hour +':'+minute+':'+second
+    $('#status').select2 ({});
+    laydate.render({
+      elem: '#time', //指定元素
+      type:'time',
+      min:strict,
+      done: function(value){
+        time = value;
+      }
+    });
+  })
+
+  function landing(index){
+    var user = $(index).parent().parent().children("h4").get(0).innerText;
+    user = user.slice(3,);
+    $.ajax({
+      type: "GET",
+      url: "https://api.radiology.link/DBC/index.php",
+      data: {
+        "do": "landing",
+        "user":user
+      },
+      success: function (data) {
+        var msg = JSON.parse(data).msg;
+        if (msg == 0){
+          layer.alert("OOPS，人好像满了，等十分钟再试吧~");
+        } else {
+          msg = "上岛信息是： " + msg;
+          layer.alert(msg);
+        }
+      }
+    })
+  }
+
+  function getbroker() {
+    $.ajax({
+      type: "GET",
+      url: "https://api.radiology.link/DBC/index.php",
+      data: {
+        "do": "get"
+      },
+      success: function (data) {
+        var trade = JSON.parse(data).trade;
+        if (trade == null) layer.alert('服务器出错啦');
+        var len = trade.length
+        if (len == 0) layer.alert('还没有发布交易哦，刷新或者发布一个吧~')
+        for (var i = 0; i < len; i++) {
+          broker(trade[i].user, trade[i].time, trade[i].price,trade[i].status, '点击上岛后查看', trade[i].broker)
+        }
+        if ($("#dbc").children().length == 0) {
+          layer.alert('还没有发布交易哦，刷新或者发布一个吧~')
+        }
+      },
+    })
+  }
+
+
+  function upload() {
+    var username = $("#user").val();
+    var price = $("#price").val();
+    var status = $("#status").val();
+    var auth = $("#auth").val();
+    var broker = $("#broker").val();
+    if (user = "" || price == "" || status == "" || auth == "" || broker == "" || time == null){
+      $('body').pgNotification({
+	          style:'bar',
+	          type:'danger',
+	          message:"请输入信息~",
+	          position:'top'
+	        }).show();
+      return 0;
+    }  
+    $.ajax({
+      type: "GET",
+      url: "https://api.radiology.link/DBC/index.php",
+      data: {
+        "do": "upload",
+        "user": username,
+        "time": time,
+        "price": price,
+        "status": status,
+        "auth": auth,
+        "broker": broker
+      },
+      success: function (data) {
+        var status = JSON.parse(data).msg;
+        if (status == 1) {
+          layer.msg('提交成功啦');
+          location.reload();
+
+        } else {
+          layer.alert('服务器出错啦！')
+        }
+      },
+      error:function(){
+        layer.alert('服务器出错啦！')
+      }
+    })
+  }
+
+  function broker(user, time, price, status, auth, broker) {
+    var now = new Date();
+    var old = time;
+    var month =  now.getMonth()+1;
+    old = now.getFullYear()+"/"+month+"-"+now.getDate()+" "+old;
+    old = new Date(Date.parse(old));
+    if (old > now){
+      var user = { user: user, time: time, price: price, status: status, auth: auth, broker: broker }
+      var template = document.getElementById("market").innerHTML;
+      var view = Mustache.render(template, user)
+      $("#dbc").append(view)
+    }
+  }
+
+</script>
+
+</html>
